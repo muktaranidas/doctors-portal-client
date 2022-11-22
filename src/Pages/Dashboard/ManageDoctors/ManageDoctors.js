@@ -18,23 +18,29 @@ const ManageDoctors = () => {
     queryKey: ["doctors"],
     queryFn: async () => {
       try {
-        const res = await fetch("http://localhost:5000/doctors", {
-          headers: {
-            authorization: `bearer ${localStorage.getItem("AccessToken")}`,
-          },
-        });
+        const res = await fetch(
+          "https://doctor-portal-server-livid.vercel.app/doctors",
+          {
+            headers: {
+              authorization: `bearer ${localStorage.getItem("AccessToken")}`,
+            },
+          }
+        );
         const data = await res.json();
         return data;
       } catch (error) {}
     },
   });
   const handledeleteModal = (doctor) => {
-    fetch(`http://localhost:5000/doctors/${doctor._id}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `bearer ${localStorage.getItem("AccessToken")}`,
-      },
-    })
+    fetch(
+      `https://doctor-portal-server-livid.vercel.app/doctors/${doctor._id}`,
+      {
+        method: "DELETE",
+        headers: {
+          authorization: `bearer ${localStorage.getItem("AccessToken")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
