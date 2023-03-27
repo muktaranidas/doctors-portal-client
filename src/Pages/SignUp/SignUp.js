@@ -32,7 +32,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        toast("User Created Successfully");
+        toast.success("User Created Successfully");
         const userInfo = {
           displayName: data.name,
         };
@@ -43,7 +43,6 @@ const SignUp = () => {
           .catch((err) => console.error(err));
       })
       .catch((err) => {
-        console.error(err);
         setSignUpError(err.message);
       });
   };

@@ -20,7 +20,6 @@ const DisplayError = () => {
       <h4 className="text-3xl">
         please
         <button className="btn btn-primary" onClick={handleLogOut}>
-          {" "}
           SignOut
         </button>
       </h4>

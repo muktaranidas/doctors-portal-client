@@ -37,7 +37,7 @@ const AddDoctor = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then((imgData) => {
+      .then((imgData) => {0
         console.log(imgData);
         if (imgData.success) {
           //   console.log(imgData.data.url);
