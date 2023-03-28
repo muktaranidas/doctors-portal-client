@@ -7,17 +7,13 @@ import { useNavigation } from "react-day-picker";
 import Loading from "../../Shared/Loading/Loading";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
-// console.log(stripePromise);
+
 
 const Payment = () => {
   const booking = useLoaderData();
   const { treatment, price, appointmentDate, slot } = booking;
 
-  // const navigation = useNavigation();
-
-  // if (navigation.state === "loading") {
-  //   return <Loading></Loading>;
-  // }
+ 
 
   return (
     <div>
